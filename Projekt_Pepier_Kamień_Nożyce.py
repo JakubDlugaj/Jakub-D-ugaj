@@ -1,30 +1,39 @@
 import getpass
 Player = input("Type your name here:")
 print(Player)
-Player_confirm = input("If your name is correct type Yes ")
-if Player_confirm  == "Yes":
-    print("You are selected as player 1")
-else:
-    print("Enter your name again")
 
-Question = (input("Do you know the rules? type y for yes n for no  y/n "))
-if Question == "y":
-    print("Waiting for the Player 2")
-elif Question == "n":
-    print("Rules are: Rock wins against scissors; paper wins against rock; and scissors wins against paper.")
-    print("Waiting for the Player 2")
+correct_name = False
+while not correct_name:
+    Player_confirm = input("If your name is correct, type Yes: ")
+    if Player_confirm.lower() == "yes":
+        correct_name = True
+    else:
+        Player = input("Enter your name again: ")
+        print(Player)
+
+print("You are selected as player 1")
+
+
+print("Rules are: Rock wins against scissors; paper wins against rock; and scissors wins against paper. Player that will win 3 times is a winner ")        
+def Question():
+    Question = (input("IF you khnow the rules and did read them above than press any key to start"))
 
 Player2 = input("Second player Type your name here:")
 print(Player2)
-print("If your name is correct press enter")
-input("")
 
+correct_name = False
+while not correct_name:
+    Player_confirm = input("If your name is correct, type Yes: ")
+    if Player_confirm.lower() == "yes":
+        correct_name = True
+    else:
+        Player = input("Enter your name again: ")
+        print(Player)
 print("You are selected as player 2")
-Question = (input("Do you know the rules? type y for yes n for no  y/n" ))
-if Question == "y":
-    print("All players are ready")
-elif Question == "n":
-    print("Rules are: Rock wins against scissors; paper wins against rock; and scissors wins against paper.")
+
+Question()
+
+
 print("All players are ready")
 
 Player_Score = 0
@@ -60,4 +69,3 @@ if Player_Score > Player2_Score:
     print("Player 1 won the game")
 else:
     print("Player 2 won the game")
-
